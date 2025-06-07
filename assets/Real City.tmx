@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
+ <editorsettings>
+  <export target="Real City.tmj" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="real_city" tilewidth="16" tileheight="16" tilecount="1036" columns="37">
+  <image source="../../kenney_roguelike-modern-city/Tilemap/real_city.png" width="592" height="448"/>
+  <tile id="703">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="704">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="705">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="706">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="707">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="708">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="709">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="710">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="711">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="712">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="713">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="714">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="715">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="716">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="717">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="740">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="741">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="742">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="743">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="744">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="745">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="746">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="747">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="748">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="749">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="750">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="751">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="752">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="753">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="754">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="777">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="778">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="779">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="780">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="781">
+   <properties>
+    <property name="collides" type="bool" value="true"/>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="782">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="783">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="784">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="785">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="786">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="787">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="788">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="789">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="790">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="791">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="814">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="815">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="816">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="817">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="818">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="819">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="820">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="821">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="822">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="823">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="824">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="825">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="826">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="827">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="828">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="860">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="861">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="862">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="863">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="864">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="865">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="866">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="867">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="868">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="869">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="897">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="898">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="899">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="900">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="901">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="902">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="903">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="904">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="905">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+  <tile id="906">
+   <properties>
+    <property name="cost" type="int" value="5"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="1037" name="split_real" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../../kenney_rpg-urban-pack/Tilemap/split_real.png" width="432" height="288"/>
+  <tile id="8">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="12">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="35">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="36">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="38">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="39">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="41">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="42">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="62">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="63">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="64">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="65">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="66">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="67">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="68">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="69">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="405">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="406">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="407">
+   <properties>
+    <property name="collidecity" type="bool" value="true"/>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="432">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="433">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="434">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="435">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="436">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="437">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="438">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="439">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="440">
+   <properties>
+    <property name="collidecity" type="bool" value="true"/>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="441">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="442">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="459">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="460">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="461">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="462">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="463">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="464">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="465">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="466">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="467">
+   <properties>
+    <property name="collidecity" type="bool" value="true"/>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="468">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+  <tile id="469">
+   <properties>
+    <property name="cost" type="int" value="2"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer id="1" name="Road" width="30" height="30">
+  <data encoding="csv">
+33,34,34,34,34,34,35,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+70,1009,1009,1009,1009,1009,72,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+70,1009,1009,1009,1009,1009,72,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+70,1009,1009,1009,1009,1009,72,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+74,71,936,937,938,971,109,711,711,711,711,711,711,711,711,711,827,827,827,711,711,711,711,711,711,711,711,711,711,711,
+147,148,1010,1019,1012,970,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,778,706,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,705,705,705,705,705,705,
+705,705,705,705,705,711,711,711,711,711,711,711,711,711,711,711,715,750,715,711,711,711,711,711,711,711,711,711,711,711,
+782,711,711,711,711,711,711,711,711,711,711,711,711,711,711,711,715,750,715,747,711,711,711,711,711,711,711,711,711,711,
+823,823,823,823,823,823,823,823,823,823,823,823,823,823,823,823,715,715,715,823,823,823,823,823,823,823,823,823,823,823,
+714,714,714,714,714,714,714,714,714,714,714,714,714,714,714,825,714,714,714,825,714,714,714,714,714,714,714,714,714,714,
+751,751,751,751,751,751,751,751,751,751,751,751,751,751,751,825,751,751,751,825,751,751,751,751,751,751,751,751,751,751,
+711,711,711,711,711,711,711,711,717,717,717,711,747,784,747,785,748,711,710,748,784,784,710,711,784,711,747,747,710,710,
+711,711,711,711,711,711,711,711,715,750,715,711,710,748,710,710,785,747,784,748,711,710,785,784,785,711,747,748,784,784,
+711,711,711,711,711,711,711,711,715,750,715,747,710,747,785,710,747,747,711,784,711,747,711,711,711,711,711,711,711,711,
+711,711,711,711,711,711,711,711,715,750,715,785,748,784,710,784,785,748,785,747,785,711,711,711,711,711,711,711,711,778,
+711,711,711,711,711,711,711,711,715,750,715,747,748,711,785,784,784,747,747,711,711,711,711,711,711,711,711,711,711,779,
+711,711,711,711,711,711,711,711,824,824,824,748,785,784,747,748,785,784,711,784,748,711,711,711,711,711,711,711,711,778,
+711,711,711,711,711,711,711,711,824,824,824,784,747,784,784,785,748,710,748,785,711,711,711,711,711,711,711,711,711,705,
+711,711,711,711,711,711,711,711,715,750,715,710,747,747,784,748,747,785,710,784,784,711,711,711,711,711,711,711,711,704,
+711,711,711,711,711,711,711,711,715,750,715,785,785,710,748,748,748,711,711,748,711,785,711,711,711,711,711,711,711,779,
+711,711,711,711,711,711,711,711,715,750,715,748,784,710,747,711,747,748,784,784,711,748,711,711,711,711,711,711,711,742
+</data>
+ </layer>
+ <layer id="2" name="Scenery" width="30" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,175,176,177,0,0,0,0,0,0,0,0,0,594,0,0,0,535,0,0,0,0,0,0,
+0,0,0,0,0,0,0,212,252,214,0,0,0,0,0,0,0,0,0,631,0,0,0,572,0,0,0,0,0,0,
+0,0,0,0,0,0,0,249,250,251,0,0,0,0,0,0,0,0,0,668,0,0,0,609,0,0,0,0,0,0,
+0,0,0,0,0,0,0,596,0,0,0,0,0,0,0,0,0,0,0,0,551,0,0,0,0,0,0,0,0,0,
+110,111,0,0,0,513,0,633,0,0,553,554,555,0,0,0,0,0,0,822,822,822,502,0,0,0,0,0,0,0,
+0,0,0,0,0,514,146,670,0,0,590,591,592,0,0,0,0,0,0,715,715,715,999,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,593,596,0,0,0,714,714,714,1036,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,630,633,0,0,0,715,715,715,999,605,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,538,0,0,0,0,0,667,670,0,0,0,715,715,715,1036,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,575,0,0,0,0,0,0,0,0,0,0,715,715,715,501,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,612,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,494,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,290,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,527,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,597,598,599,0,0,0,0,0,0,0,0,641,0,0,597,598,599,0,0,589,0,0,
+0,0,0,0,0,0,0,0,0,635,0,0,0,0,0,0,0,0,0,0,0,0,0,635,0,0,0,0,0,0,
+0,0,0,0,0,534,0,0,0,672,0,0,0,0,0,0,0,604,0,0,920,921,922,672,0,0,534,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,775,776,777,0,0,641,0,0,957,958,959,0,0,639,640,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,558,812,813,814,0,0,604,0,0,0,0,0,0,0,0,638,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,635,0,0,0,0,0,641,0,0,0,0,0,0,0,0,675,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,672,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,700,701,0,600,0,0,0,0,0,0,0,0,0,0,247,247,247,210,210,210,285,0,
+0,0,0,0,0,0,0,0,737,738,0,637,0,0,0,0,0,0,0,0,0,677,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,674,0,0,0,0,0,0,0,0,0,678,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,679,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,680,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,676,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,493,486,487,488,489,490,491,492,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Streetlight" width="30" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,559,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,556,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="Buildings" width="30" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,19,19,19,19,18,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,54,56,56,56,56,55,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,420,421,422,422,422,423,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,383,384,385,385,385,386,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,346,347,348,348,348,349,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,383,384,385,385,385,386,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,420,421,422,422,422,423,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,383,384,385,385,385,386,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,346,347,348,348,348,349,
+25,27,27,27,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,383,384,385,385,385,386,
+28,137,68,69,65,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,421,422,422,422,422,423,
+62,64,64,64,63,543,543,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,458,459,459,459,459,459,
+223,187,188,189,223,0,579,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,161,163,164,161,163,164,
+260,261,262,263,260,614,578,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,353,354,355,353,354,355,
+297,445,188,446,297,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+11,11,11,11,11,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,3,3,3,3,2,0,
+15,15,15,15,15,49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,7,7,7,7,7,41,0,
+15,15,15,15,15,49,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,113,7,7,7,7,41,0,
+48,48,48,48,48,47,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38,40,40,40,40,40,39,0,
+192,192,192,192,192,193,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,195,394,395,396,396,397,197,0,
+192,873,192,836,192,193,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,195,196,196,196,196,196,197,0,
+192,192,192,192,192,193,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,195,196,196,196,196,196,197,0
+</data>
+ </layer>
+ <layer id="5" name="Windows" width="30" height="30">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,579,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,914,915,0,0,
+584,0,0,0,584,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,322,0,951,952,0,0,
+621,583,0,583,621,0,579,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,990,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,546,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,623,0,623,0,580,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>
