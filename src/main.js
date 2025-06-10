@@ -5,8 +5,19 @@ let config = {
     render: {
         pixelArt: true  // prevent pixel art from getting blurred when scaled
     },
-    width: 1280,
-    height: 800,
+    physics: {
+        default: 'arcade',
+        arcade: {
+            debug: false,
+            gravity: {
+                x: 0,
+                y: 200
+            }
+        }
+    },
+
+    width: 720,
+    height: 720,
     scene: [Load, MainCity, MonochromeCity, RealCity, RealPlatformer]
 }
 

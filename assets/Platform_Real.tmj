@@ -58,8 +58,8 @@
                  "type":"",
                  "visible":true,
                  "width":16,
-                 "x":80.2632508034219,
-                 "y":54.1684696510207
+                 "x":80.2633,
+                 "y":54.1685
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -85,6 +85,79 @@
          "spacing":0,
          "tilecount":1036,
          "tileheight":16,
+         "tiles":[
+                {
+                 "id":152,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":153,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":154,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":155,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":263,
+                 "properties":[
+                        {
+                         "name":"climb",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":264,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":265,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":266,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }],
          "tilewidth":16
         }],
  "tilewidth":16,

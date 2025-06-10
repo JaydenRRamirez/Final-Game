@@ -9,8 +9,9 @@ class RealPlatformer extends Phaser.Scene {
         this.tileset = this.map.addTilesetImage("real_city", "Real_City_tiles");
 
         // Create layers
-        this.groundLayer = this.map.createLayer("Platforms", this.tileset, 0, 0);
-        this.groundLayer.setCollisionByProperty({ collides: true });
+        this.wallsLayer = this.map.createLayer("Wall", this.tileset, 0, 0);
+        this.platformLayer = this.map.createLayer("Platforms", this.tileset, 0, 0);
+        this.platformLayer.setCollisionByProperty({ collides: true });
 
         // Create player
         my.sprite.player = this.physics.add.sprite(0, 8, "player").setOrigin(0);
@@ -20,15 +21,15 @@ class RealPlatformer extends Phaser.Scene {
         my.sprite.player.setCollideWorldBounds(true);
 
         // Enable collision with platforms
-        this.physics.add.collider(my.sprite.player, this.groundLayer);
+        this.physics.add.collider(my.sprite.player, this.platformLayer);
 
         // Set up input
         this.cursors = this.input.keyboard.createCursorKeys();
 
         // Create cone object from Tiled
-        this.cone = this.map.createFromObjects("Objects", {
+        this.cone = this.map.createFromObjects("Cone", {
             name: "cone",
-            key: "real_city",
+            key: "Real_City_tiles",
             frame: 680
         });
 
@@ -44,6 +45,15 @@ class RealPlatformer extends Phaser.Scene {
 
         // Track ladder status
         this.onLadder = false;
+
+        this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+        this.cameras.main.startFollow(my.sprite.player);
+
+        // Setting Camera
+        let zoomX = this.scale.width / this.map.widthInPixels;
+        let zoomY = this.scale.height / this.map.heightInPixels;
+        let zoom = Math.min(zoomX, zoomY);
+        this.cameras.main.setZoom(zoom);
     }
 
     update() {
@@ -55,7 +65,7 @@ class RealPlatformer extends Phaser.Scene {
         this.onLadder = false;
 
         // Check if overlapping a climbable tile
-        const tile = this.groundLayer.getTileAtWorldXY(player.x, player.y);
+        const tile = this.platformLayer.getTileAtWorldXY(player.x, player.y);
         if (tile && tile.properties.climb) {
             this.onLadder = true;
         }

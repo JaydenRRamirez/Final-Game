@@ -15,11 +15,16 @@ class Load extends Phaser.Scene {
         this.load.image("split_monochrome_tiles", "split_monochrome.png");                   // Packed tilemap
         this.load.image("split_real_tiles", "split_real.png");                   // Packed tilemap
         this.load.image("Monochrome_City_tiles", "pirate.png");                   // Packed tilemap
-        this.load.image("Real_City_tiles", "real_city.png");                   // Packed tilemap
+        //this.load.image("Real_City_tiles", "real_city.png");                   // Packed tilemap
         this.load.tilemapTiledJSON("Main City", "Main City.tmj");   // Tilemap in JSON
         this.load.tilemapTiledJSON("Monochrome City", "Monochrome City.tmj");   // Tilemap in JSON
         this.load.tilemapTiledJSON("Real City", "Real City.tmj");   // Tilemap in JSON
         this.load.tilemapTiledJSON("Platform Real", "Platform_Real.tmj");   // Tilemap in JSON
+
+        this.load.spritesheet("Real_City_tiles", "real_city.png", {
+            frameWidth: 16,
+            frameHeight: 16
+        });
 
     }
 

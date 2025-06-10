@@ -60,6 +60,10 @@ class MainCity extends Phaser.Scene {
             this.resetCost([this.tileset1, this.tileset2]);
             this.lowCost = false;
         }
+
+        this.input.keyboard.on('keydown-J', () => {
+            this.scene.start('RealPlatformerScene')
+        })
     }
 
     update() {
