@@ -27,8 +27,8 @@ class MonochromeCity extends Phaser.Scene {
         this.sailLayer = this.map.createLayer("Sail", this.tileset, 0, 0);
 
         // Player sprite
-        my.sprite.purpleTownie = this.add.sprite(this.tileXtoWorld(27), this.tileYtoWorld(18), "player").setOrigin(0, 0);
-        this.activeCharacter = my.sprite.purpleTownie;
+        my.sprite.player = this.add.sprite(this.tileXtoWorld(27), this.tileYtoWorld(18), "player").setOrigin(0, 0);
+        this.activeCharacter = my.sprite.player;
 
         // Camera
         this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="10" height="10" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="2">
+ <tileset firstgid="1" name="real_city" tilewidth="16" tileheight="16" tilecount="1036" columns="37">
+  <image source="../../kenney_roguelike-modern-city/Tilemap/real_city.png" width="592" height="448"/>
+ </tileset>
+ <layer id="1" name="Wall" width="10" height="10">
+  <data encoding="csv">
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192,
+192,192,192,192,192,192,192,192,192,192
+</data>
+ </layer>
+ <layer id="2" name="Platforms" width="10" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,155,0,0,0,0,0,
+0,0,266,264,154,266,266,266,266,264,
+0,0,0,264,0,0,0,0,0,264,
+0,0,0,264,266,264,155,0,0,264,
+265,264,266,266,154,264,154,264,266,267,
+0,264,0,0,155,264,0,264,0,0,
+0,264,0,0,155,264,0,264,0,0,
+265,266,266,266,266,266,266,266,266,267
+</data>
+ </layer>
+ <objectgroup id="3" name="Cone">
+  <object id="1" name="cone" gid="681" x="80.2633" y="54.1685" width="16" height="16"/>
+ </objectgroup>
+</map>

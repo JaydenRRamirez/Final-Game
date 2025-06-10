@@ -10,6 +10,8 @@ class RealCity extends Phaser.Scene {
         this.SCALE = 1.5;
         this.TILEWIDTH = 30;
         this.TILEHEIGHT = 30;
+
+        this.hasStartedMinigame = false;  // Flag to prevent re-triggering
     }
 
     create() {
@@ -24,8 +26,8 @@ class RealCity extends Phaser.Scene {
         this.windowsLayer = this.map.createLayer("Windows", this.tileset, 0, 0);
 
         // Player sprite
-        my.sprite.purpleTownie = this.add.sprite(this.tileXtoWorld(0), this.tileYtoWorld(17), "player").setOrigin(0, 0);
-        this.activeCharacter = my.sprite.purpleTownie;
+        my.sprite.player = this.add.sprite(this.tileXtoWorld(0), this.tileYtoWorld(17), "player").setOrigin(0, 0);
+        this.activeCharacter = my.sprite.player;
 
         // Camera
         this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
@@ -43,24 +45,37 @@ class RealCity extends Phaser.Scene {
         this.input.on('pointerup', this.handleClick, this);
         this.cKey = this.input.keyboard.addKey('C');
         this.lowCost = false;
-        
 
-        //visualize collidable tiles
-        this.highlightCollidableTiles([this.groundLayer, this.sceneryLayer, this.streetlightLayer, this.buildingsLayer, this.windowsLayer]);
+        // Visualize collisions
+        this.highlightCollidableTiles([
+            this.groundLayer,
+            this.sceneryLayer,
+            this.streetlightLayer,
+            this.buildingsLayer,
+            this.windowsLayer
+        ]);
 
+        // Create NPCs
         this.createNPC("npc1", {x: 23, y: 13}, [{x: 23, y: 13}, {x: 17, y: 27}]);
         this.createNPC("npc2", {x: 20, y: 4}, [{x: 20, y: 4}, {x: 6, y: 6}]);
+
+        // Tile cost
         if (!this.lowCost) {
-            this.setCost([this.tileset1, this.tileset2]);
+            this.setCost([this.tileset]);
             this.lowCost = true;
         } else {
-            this.resetCost([this.tileset1, this.tileset2]);
+            this.resetCost([this.tileset]);
             this.lowCost = false;
         }
     }
 
     update() {
-      
+        // Check overlap with npc1 to start mini-game
+        if (!this.hasStartedMinigame && this.npc1 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc1.getBounds(), this.activeCharacter.getBounds())) {
+            this.hasStartedMinigame = true;
+            this.scene.start("RealPlatformerScene");
+        }
     }
 
     tileXtoWorld(tileX) {
@@ -98,7 +113,7 @@ class RealCity extends Phaser.Scene {
         let toY = Math.floor(y / this.TILESIZE);
         let fromX = Math.floor(this.activeCharacter.x / this.TILESIZE);
         let fromY = Math.floor(this.activeCharacter.y / this.TILESIZE);
-        
+
         console.log(`Going from (${fromX}, ${fromY}) to (${toX}, ${toY})`);
 
         this.finder.findPath(fromX, fromY, toX, toY, (path) => {
@@ -180,7 +195,6 @@ class RealCity extends Phaser.Scene {
                 }
             });
         });
-
     }
 
     createNPC(key, startTile, pathTiles) {
@@ -189,15 +203,20 @@ class RealCity extends Phaser.Scene {
             this.tileYtoWorld(startTile.y),
             key
         ).setOrigin(0, 0);
-    
+
+        // Track npc1 for overlap check
+        if (key === "npc1") {
+            this.npc1 = npc;
+        }
+
         const walkPath = [...pathTiles, ...pathTiles.slice().reverse().slice(1, -1)];
-    
+
         let currentStep = 0;
-    
+
         const moveToNext = () => {
             const from = walkPath[currentStep];
             const to = walkPath[(currentStep + 1) % walkPath.length];
-    
+
             this.finder.findPath(from.x, from.y, to.x, to.y, path => {
                 if (path && path.length > 0) {
                     let tweens = path.slice(1).map(p => ({
@@ -205,7 +224,7 @@ class RealCity extends Phaser.Scene {
                         y: this.tileYtoWorld(p.y),
                         duration: 300
                     }));
-    
+
                     this.tweens.chain({
                         targets: npc,
                         tweens: tweens,
@@ -218,10 +237,10 @@ class RealCity extends Phaser.Scene {
                     console.warn(`NPC '${key}' could not pathfind from (${from.x},${from.y}) to (${to.x},${to.y})`);
                 }
             });
-    
-            this.finder.calculate();  // Don't forget this!
+
+            this.finder.calculate();
         };
-    
+
         moveToNext();
     }
 }
