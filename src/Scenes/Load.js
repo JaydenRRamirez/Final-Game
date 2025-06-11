@@ -10,6 +10,7 @@ class Load extends Phaser.Scene {
         this.load.image("player", "tile_0119.png");
         this.load.image("boat", "tile_0100.png");
         this.load.image("cannonballs", "tile_0121.png");
+        this.load.image("titlecard", "90.png");
         this.load.image("background", "cubic-black-coal-blocks-pixel-background-pattern-vector.png");
         this.load.image("npc1", "tile_0321.png");
         this.load.image("npc2", "tile_0483.png");
@@ -43,7 +44,7 @@ class Load extends Phaser.Scene {
         
 
          // ...and pass to the next Scene
-         this.scene.start("MainCityScene");
+         this.scene.start("TitleScene");
     }
 
     // Never get here since a new scene is started in create()

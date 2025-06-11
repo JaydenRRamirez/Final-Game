@@ -406,6 +406,306 @@
     <property name="cost" type="int" value="5"/>
    </properties>
   </tile>
+  <tile id="925">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="926">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="927">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="928">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="929">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="930">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="931">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="932">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="933">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="934">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="935">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="936">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="937">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="938">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="939">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="940">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="941">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="942">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="943">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="944">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="962">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="963">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="964">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="965">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="966">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="967">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="968">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="969">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="970">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="971">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="972">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="973">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="974">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="975">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="976">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="977">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="978">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="979">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="980">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="981">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="999">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1000">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1001">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1002">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1003">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1004">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1005">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1006">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1007">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1008">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1009">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1010">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1011">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1012">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1013">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1014">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1015">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1016">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1017">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
+  <tile id="1018">
+   <properties>
+    <property name="cost" type="int" value="1"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="1037" name="split_real" tilewidth="16" tileheight="16" tilecount="486" columns="27">
   <image source="../../kenney_rpg-urban-pack/Tilemap/split_real.png" width="432" height="288"/>

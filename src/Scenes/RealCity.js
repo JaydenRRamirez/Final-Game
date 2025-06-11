@@ -12,6 +12,7 @@ class RealCity extends Phaser.Scene {
         this.TILEHEIGHT = 30;
 
         this.hasStartedMinigame = false;  // Flag to prevent re-triggering
+        this.dialogue = false;
     }
 
     create() {
@@ -35,7 +36,7 @@ class RealCity extends Phaser.Scene {
 
         // Pathfinding grid
         const tinyTownGrid = this.layersToGrid();
-        const walkables = [703, 704, 705, 706, 707, 708, 709, 710, 711, 716, 717, 740, 741, 742, 746, 747, 748, 777, 778, 781, 782, 783, 784, 785, 820, 821, 822, 823, 824, 825, 826, 827, 828, 888, 889, 935, 936, 937, 10008, 1009, 1011, 1018, ];
+        const walkables = [703, 704, 705, 706, 707, 708, 709, 710, 711, 716, 717, 740, 741, 742, 746, 747, 748, 777, 778, 781, 782, 783, 784, 785, 820, 821, 822, 823, 824, 825, 826, 827, 828, 888, 889, 935, 936, 937, 938, 1008, 1009, 1010, 1011, 1012, 1018, 1019];
 
         this.finder = new EasyStar.js();
         this.finder.setGrid(tinyTownGrid);
@@ -82,7 +83,37 @@ class RealCity extends Phaser.Scene {
         if (!this.hasStartedMinigame && this.npc1 &&
             Phaser.Geom.Intersects.RectangleToRectangle(this.npc1.getBounds(), this.activeCharacter.getBounds())) {
             this.hasStartedMinigame = true;
-            this.scene.start("RealPlatformerScene");
+            this.scene.start("NPC1Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc2 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc2.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC2Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc4 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc4.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC4Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc5 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc5.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC5Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc6 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc6.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC6Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc7 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc7.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC7Dialogue");
         }
     }
 
@@ -215,6 +246,26 @@ class RealCity extends Phaser.Scene {
         // Track npc1 for overlap check
         if (key === "npc1") {
             this.npc1 = npc;
+        }
+
+        if (key === "npc2") {
+            this.npc2 = npc;
+        }
+
+        if (key === "npc4") {
+            this.npc4 = npc;
+        }
+
+        if (key === "npc5") {
+            this.npc5 = npc;
+        }
+
+        if (key === "npc6") {
+            this.npc6 = npc;
+        }
+
+        if (key === "npc7") {
+            this.npc7 = npc;
         }
 
         const walkPath = [...pathTiles, ...pathTiles.slice().reverse().slice(1, -1)];

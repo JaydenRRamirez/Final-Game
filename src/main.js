@@ -18,7 +18,7 @@ let config = {
 
     width: 720,
     height: 720,
-    scene: [Load, MainCity, MonochromeCity, RealCity, RealPlatformer, MonochromeShooter]
+    scene: [Load, Title, MainCity, MonochromeCity, RealCity, RealPlatformer, MonochromeShooter, NPC1Dialogue, NPC2Dialogue, NPC3Dialogue, NPC4Dialogue, NPC5Dialogue, NPC6Dialogue, NPC7Dialogue, NPC8Dialogue, NPC9Dialogue]
 }
 
 var cursors;
