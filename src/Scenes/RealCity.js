@@ -35,7 +35,7 @@ class RealCity extends Phaser.Scene {
 
         // Pathfinding grid
         const tinyTownGrid = this.layersToGrid();
-        const walkables = [703, 704, 705, 706, 707, 708, 709, 710, 711, 716, 717, 740, 741, 742, 746, 747, 748, 777, 778, 781, 782, 783, 784, 785, 820, 821, 822, 823, 824, 825, 826, 827, 828];
+        const walkables = [703, 704, 705, 706, 707, 708, 709, 710, 711, 716, 717, 740, 741, 742, 746, 747, 748, 777, 778, 781, 782, 783, 784, 785, 820, 821, 822, 823, 824, 825, 826, 827, 828, 888, 889, 935, 936, 937, 10008, 1009, 1011, 1018, ];
 
         this.finder = new EasyStar.js();
         this.finder.setGrid(tinyTownGrid);
@@ -58,6 +58,14 @@ class RealCity extends Phaser.Scene {
         // Create NPCs
         this.createNPC("npc1", {x: 23, y: 13}, [{x: 23, y: 13}, {x: 17, y: 27}]);
         this.createNPC("npc2", {x: 20, y: 4}, [{x: 20, y: 4}, {x: 6, y: 6}]);
+        this.createNPC("npc4", {x: 2, y: 15}, [{x: 2, y: 15}, {x: 6, y: 29}]);
+        this.createNPC("npc5", {x: 1, y: 1}, [{x: 1, y: 1}, {x: 5, y: 1}]);
+        this.createNPC("npc6", {x: 5, y: 3}, [{x: 5, y: 3}, {x: 1, y: 3}]);
+        this.createNPC("npc7", {x: 20, y: 23}, [{x: 20, y: 23}, {x: 20, y: 27}]);
+
+
+
+
 
         // Tile cost
         if (!this.lowCost) {

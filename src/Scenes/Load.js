@@ -14,6 +14,13 @@ class Load extends Phaser.Scene {
         this.load.image("npc1", "tile_0321.png");
         this.load.image("npc2", "tile_0483.png");
         this.load.image("npc3", "tile_0126.png");
+        this.load.image("npc4", "tile_0078.png");
+        this.load.image("npc5", "tile_0159.png");
+        this.load.image("npc6", "tile_0213.png");
+        this.load.image("npc7", "tile_0402.png");
+        this.load.image("npc8", "tile_0125.png");
+        this.load.image("npc9", "tile_0127.png");
+
 
         // Load tilemap information
         this.load.image("split_monochrome_tiles", "split_monochrome.png");                   // Packed tilemap

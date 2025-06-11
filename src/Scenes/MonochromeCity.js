@@ -12,6 +12,7 @@ class MonochromeCity extends Phaser.Scene {
         this.SCALE = 1.5;
         this.TILEWIDTH = 30;
         this.TILEHEIGHT = 30;
+        this.hasStartedMinigame = false;  // Flag to prevent re-triggering
     }
 
     create() {
@@ -51,6 +52,8 @@ class MonochromeCity extends Phaser.Scene {
         this.highlightCollidableTiles([this.groundLayer, this.treesLayer, this.housesLayer]);
 
         this.createNPC("npc3", {x: 21, y: 8}, [{x: 21, y: 8}, {x: 23, y: 8}]);
+        this.createNPC("npc8", {x: 26, y: 19}, [{x: 26, y: 19}, {x: 25, y: 19}]);
+        this.createNPC("npc9", {x: 14, y: 11}, [{x: 14, y: 11}, {x: 20, y: 11}]);
 
         if (!this.lowCost) {
             this.setCost([this.tileset1, this.tileset2]);
@@ -62,7 +65,12 @@ class MonochromeCity extends Phaser.Scene {
     }
 
     update() {
-        
+        // Check overlap with npc1 to start mini-game
+        if (!this.hasStartedMinigame && this.npc3 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc3.getBounds(), this.activeCharacter.getBounds())) {
+            this.hasStartedMinigame = true;
+            this.scene.start("MonochromeShooterScene");
+        }
     }
 
     tileXtoWorld(tileX) {
@@ -192,9 +200,9 @@ class MonochromeCity extends Phaser.Scene {
         ).setOrigin(0, 0);
 
         // Track npc1 for overlap check
-        //if (key === "npc1") {
-          //  this.npc1 = npc;
-        //}
+        if (key === "npc3") {
+            this.npc3 = npc;
+        }
 
         const walkPath = [...pathTiles, ...pathTiles.slice().reverse().slice(1, -1)];
 
