@@ -49,6 +49,9 @@ class MonochromeCity extends Phaser.Scene {
 
         // visualize collidable tiles
         this.highlightCollidableTiles([this.groundLayer, this.treesLayer, this.housesLayer]);
+
+        this.createNPC("npc3", {x: 21, y: 8}, [{x: 21, y: 8}, {x: 23, y: 8}]);
+
         if (!this.lowCost) {
             this.setCost([this.tileset1, this.tileset2]);
             this.lowCost = true;
@@ -180,4 +183,52 @@ class MonochromeCity extends Phaser.Scene {
             });
         });
     }
+
+    createNPC(key, startTile, pathTiles) {
+        const npc = this.add.sprite(
+            this.tileXtoWorld(startTile.x),
+            this.tileYtoWorld(startTile.y),
+            key
+        ).setOrigin(0, 0);
+
+        // Track npc1 for overlap check
+        //if (key === "npc1") {
+          //  this.npc1 = npc;
+        //}
+
+        const walkPath = [...pathTiles, ...pathTiles.slice().reverse().slice(1, -1)];
+
+        let currentStep = 0;
+
+        const moveToNext = () => {
+            const from = walkPath[currentStep];
+            const to = walkPath[(currentStep + 1) % walkPath.length];
+
+            this.finder.findPath(from.x, from.y, to.x, to.y, path => {
+                if (path && path.length > 0) {
+                    let tweens = path.slice(1).map(p => ({
+                        x: this.tileXtoWorld(p.x),
+                        y: this.tileYtoWorld(p.y),
+                        duration: 300
+                    }));
+
+                    this.tweens.chain({
+                        targets: npc,
+                        tweens: tweens,
+                        onComplete: () => {
+                            currentStep = (currentStep + 1) % walkPath.length;
+                            moveToNext();
+                        }
+                    });
+                } else {
+                    console.warn(`NPC '${key}' could not pathfind from (${from.x},${from.y}) to (${to.x},${to.y})`);
+                }
+            });
+
+            this.finder.calculate();
+        };
+
+        moveToNext();
+    }
+
 }

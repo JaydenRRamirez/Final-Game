@@ -8,8 +8,12 @@ class Load extends Phaser.Scene {
 
         // Load townsfolk
         this.load.image("player", "tile_0119.png");
+        this.load.image("boat", "tile_0100.png");
+        this.load.image("cannonballs", "tile_0121.png");
+        this.load.image("background", "cubic-black-coal-blocks-pixel-background-pattern-vector.png");
         this.load.image("npc1", "tile_0321.png");
         this.load.image("npc2", "tile_0483.png");
+        this.load.image("npc3", "tile_0126.png");
 
         // Load tilemap information
         this.load.image("split_monochrome_tiles", "split_monochrome.png");                   // Packed tilemap

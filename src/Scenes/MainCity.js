@@ -64,6 +64,10 @@ class MainCity extends Phaser.Scene {
         this.input.keyboard.on('keydown-J', () => {
             this.scene.start('RealPlatformerScene')
         })
+
+        this.input.keyboard.on('keydown-L', () => {
+            this.scene.start('MonochromeShooterScene')
+        })
     }
 
     update() {
