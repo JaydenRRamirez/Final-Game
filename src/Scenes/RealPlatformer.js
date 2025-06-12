@@ -53,6 +53,8 @@ class RealPlatformer extends Phaser.Scene {
         this.onLadder = false;
 
         this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+        this.physics.world.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+        my.sprite.player.setCollideWorldBounds(true);
         this.cameras.main.startFollow(my.sprite.player);
 
         // Setting Camera
