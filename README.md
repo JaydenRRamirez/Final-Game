@@ -1,0 +1,3 @@
+Welcome... to the World of Gray. Bridge the gap between reality and fantasy, as you explore each scene, filled with things to see, characters to interact with, and perhaps some games to play. Once you are done, head on to the heart to end the experience, and see if you'd like to dive into the world again.
+
+Controls: Using your mouse, click on the tile you'd like to go to, and watch the character travel to that spot. To talk with characters, simply get into contact with them.
