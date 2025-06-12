@@ -10,7 +10,7 @@ class NPC1Dialogue extends Phaser.Scene {
             wordWrap: { width: 300 }
         });
 
-        const text2 = this.add.text(100, 500, "Press SPACE to start the game.", {
+        const text2 = this.add.text(100, 500, "Press SPACE to start the game. Press UP or DOWN to climb ladders.", {
             fontSize: "16px",
             fill: "#ffffff",
             wordWrap: { width: 300 }

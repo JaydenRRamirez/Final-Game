@@ -12,10 +12,17 @@ class MonochromeCity extends Phaser.Scene {
         this.SCALE = 1.5;
         this.TILEWIDTH = 30;
         this.TILEHEIGHT = 30;
-        this.hasStartedMinigame = false;  // Flag to prevent re-triggering
+        this.hasStartedMinigame = false; // Minigame Flag
     }
 
     create() {
+        // Music
+        if (bgm) {
+            bgm.stop();
+        }
+        
+        bgm = this.sound.add("Monochrome City Theme", { loop: true, volume: 0.5 });
+        bgm.play();
         this.map = this.add.tilemap("Monochrome City", this.TILESIZE, this.TILESIZE, this.TILEHEIGHT, this.TILEWIDTH);
         this.tileset = this.map.addTilesetImage("pirate", "Monochrome_City_tiles");
         this.animatedTiles.init(this.map);
@@ -28,7 +35,7 @@ class MonochromeCity extends Phaser.Scene {
         this.sailLayer = this.map.createLayer("Sail", this.tileset, 0, 0);
 
         // Player sprite
-        my.sprite.player = this.add.sprite(this.tileXtoWorld(27), this.tileYtoWorld(18), "player").setOrigin(0, 0);
+        my.sprite.player = this.add.sprite(this.tileXtoWorld(29), this.tileYtoWorld(16), "player").setOrigin(0, 0);
         this.activeCharacter = my.sprite.player;
 
         // Camera
@@ -48,11 +55,8 @@ class MonochromeCity extends Phaser.Scene {
         this.cKey = this.input.keyboard.addKey('C');
         this.lowCost = false;
 
-        // visualize collidable tiles
-        this.highlightCollidableTiles([this.groundLayer, this.treesLayer, this.housesLayer]);
-
         this.createNPC("npc3", {x: 21, y: 8}, [{x: 21, y: 8}, {x: 23, y: 8}]);
-        this.createNPC("npc8", {x: 26, y: 19}, [{x: 26, y: 19}, {x: 25, y: 19}]);
+        this.createNPC("npc8", {x: 26, y: 18}, [{x: 26, y: 18}, {x: 26, y: 19}]);
         this.createNPC("npc9", {x: 14, y: 11}, [{x: 14, y: 11}, {x: 20, y: 11}]);
 
         if (!this.lowCost) {
@@ -65,11 +69,23 @@ class MonochromeCity extends Phaser.Scene {
     }
 
     update() {
-        // Check overlap with npc1 to start mini-game
-        if (!this.hasStartedMinigame && this.npc3 &&
-            Phaser.Geom.Intersects.RectangleToRectangle(this.npc3.getBounds(), this.activeCharacter.getBounds())) {
+        // Check overlap with npc for dialogue or minigame.
+        if (!this.hasStartedMinigame && this.npc8 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc8.getBounds(), this.activeCharacter.getBounds())) {
             this.hasStartedMinigame = true;
-            this.scene.start("MonochromeShooterScene");
+            this.scene.start("NPC8Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc3 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc3.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC3Dialogue");
+        }
+
+        if (!this.dialogueStarted && this.npc9 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc9.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC9Dialogue");
         }
     }
 
@@ -175,23 +191,6 @@ class MonochromeCity extends Phaser.Scene {
         }
     }
 
-    highlightCollidableTiles(layers) {
-        layers.forEach(layer => {
-            layer.forEachTile(tile => {
-                if (tile && tile.properties && tile.properties.collides) {
-                    this.add.rectangle(
-                        tile.pixelX + tile.width / 2,
-                        tile.pixelY + tile.height / 2,
-                        tile.width,
-                        tile.height,
-                        0xff0000,
-                        0.3
-                    ).setDepth(1000);
-                }
-            });
-        });
-    }
-
     createNPC(key, startTile, pathTiles) {
         const npc = this.add.sprite(
             this.tileXtoWorld(startTile.x),
@@ -199,9 +198,17 @@ class MonochromeCity extends Phaser.Scene {
             key
         ).setOrigin(0, 0);
 
-        // Track npc1 for overlap check
+        // Track npcs for overlap check
         if (key === "npc3") {
             this.npc3 = npc;
+        }
+
+        if (key === "npc8") {
+            this.npc8 = npc;
+        }
+
+        if (key === "npc9") {
+            this.npc9 = npc;
         }
 
         const walkPath = [...pathTiles, ...pathTiles.slice().reverse().slice(1, -1)];

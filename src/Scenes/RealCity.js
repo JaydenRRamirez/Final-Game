@@ -16,6 +16,12 @@ class RealCity extends Phaser.Scene {
     }
 
     create() {
+        if (bgm) {
+            bgm.stop();
+        }
+        
+        bgm = this.sound.add("Real City Theme", { loop: true, volume: 0.5 });
+        bgm.play();
         this.map = this.add.tilemap("Real City", this.TILESIZE, this.TILESIZE, this.TILEHEIGHT, this.TILEWIDTH);
         this.tileset = this.map.addTilesetImage("real_city", "Real_City_tiles");
 
@@ -47,15 +53,6 @@ class RealCity extends Phaser.Scene {
         this.cKey = this.input.keyboard.addKey('C');
         this.lowCost = false;
 
-        // Visualize collisions
-        this.highlightCollidableTiles([
-            this.groundLayer,
-            this.sceneryLayer,
-            this.streetlightLayer,
-            this.buildingsLayer,
-            this.windowsLayer
-        ]);
-
         // Create NPCs
         this.createNPC("npc1", {x: 23, y: 13}, [{x: 23, y: 13}, {x: 17, y: 27}]);
         this.createNPC("npc2", {x: 20, y: 4}, [{x: 20, y: 4}, {x: 6, y: 6}]);
@@ -63,10 +60,6 @@ class RealCity extends Phaser.Scene {
         this.createNPC("npc5", {x: 1, y: 1}, [{x: 1, y: 1}, {x: 5, y: 1}]);
         this.createNPC("npc6", {x: 5, y: 3}, [{x: 5, y: 3}, {x: 1, y: 3}]);
         this.createNPC("npc7", {x: 20, y: 23}, [{x: 20, y: 23}, {x: 20, y: 27}]);
-
-
-
-
 
         // Tile cost
         if (!this.lowCost) {
@@ -79,7 +72,7 @@ class RealCity extends Phaser.Scene {
     }
 
     update() {
-        // Check overlap with npc1 to start mini-game
+        // Check overlap with npcs for dialogue or mini game.
         if (!this.hasStartedMinigame && this.npc1 &&
             Phaser.Geom.Intersects.RectangleToRectangle(this.npc1.getBounds(), this.activeCharacter.getBounds())) {
             this.hasStartedMinigame = true;
@@ -219,23 +212,6 @@ class RealCity extends Phaser.Scene {
         }
     }
 
-    highlightCollidableTiles(layers) {
-        layers.forEach(layer => {
-            layer.forEachTile(tile => {
-                if (tile && tile.properties && tile.properties.collides) {
-                    this.add.rectangle(
-                        tile.pixelX + tile.width / 2,
-                        tile.pixelY + tile.height / 2,
-                        tile.width,
-                        tile.height,
-                        0xff0000,
-                        0.3
-                    ).setDepth(1000);
-                }
-            });
-        });
-    }
-
     createNPC(key, startTile, pathTiles) {
         const npc = this.add.sprite(
             this.tileXtoWorld(startTile.x),
@@ -243,7 +219,7 @@ class RealCity extends Phaser.Scene {
             key
         ).setOrigin(0, 0);
 
-        // Track npc1 for overlap check
+        // Track npcs for overlap check
         if (key === "npc1") {
             this.npc1 = npc;
         }

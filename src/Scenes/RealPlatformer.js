@@ -4,6 +4,12 @@ class RealPlatformer extends Phaser.Scene {
     }
 
     create() {
+        if (bgm) {
+            bgm.stop();
+        }
+        
+        bgm = this.sound.add("Real Platform Theme", { loop: true, volume: 0.5 });
+        bgm.play();
         // Load map and tileset
         this.map = this.add.tilemap("Platform Real", 16, 16, 10, 10);
         this.tileset = this.map.addTilesetImage("real_city", "Real_City_tiles");

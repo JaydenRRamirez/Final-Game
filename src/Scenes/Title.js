@@ -4,6 +4,12 @@ class Title extends Phaser.Scene {
     }
 
     create() {
+        if (bgm) {
+            bgm.stop();
+        }
+        
+        bgm = this.sound.add("Title", { loop: true, volume: 0.5 });
+        bgm.play();
         // Add background
         this.add.image(400, 300, "titlecard").setOrigin(0.5).setDepth(-1).setScale(1.5);
 

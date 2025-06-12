@@ -4,79 +4,116 @@ class MonochromeShooter extends Phaser.Scene {
     }
 
     create() {
-        // Add background
+        if (bgm) {
+            bgm.stop();
+        }
+
+        bgm = this.sound.add("Monochrome Shooter Theme", { loop: true, volume: 0.5 });
+        bgm.play();
+
+        // Background
         this.add.image(400, 300, "background").setOrigin(0.5).setDepth(-1).setScale(1.5);
 
         // Game settings
         this.playerSpeed = 200;
         this.bulletSpeed = 150;
-        this.spawnInterval = 500;
+        this.spawnInterval = 1000;
         this.difficultyTimer = 0;
+        this.phase = 0;
+        this.maxPhase = 3;
         this.gameOver = false;
 
         // Player
-        this.player = this.physics.add.sprite(750, 300, "boat").setOrigin(0.5);
+        this.player = this.physics.add.sprite(300, 300, "boat").setOrigin(0.5);
         this.player.setCollideWorldBounds(true);
 
-        // Bullets group
+        // Bullets
         this.bullets = this.physics.add.group();
 
         // Input
         this.cursors = this.input.keyboard.createCursorKeys();
 
-        // Timer to spawn cannonballs
+        // Collision
+        this.physics.add.overlap(this.player, this.bullets, this.handleHit, null, this);
+
+        // Spawn loop
         this.spawnTimer = this.time.addEvent({
             delay: this.spawnInterval,
-            callback: this.spawnBullet,
+            callback: this.spawnFromAllSides,
             callbackScope: this,
             loop: true
         });
-
-        // Collision detection
-        this.physics.add.overlap(this.player, this.bullets, this.handleHit, null, this);
     }
 
     update(time, delta) {
         if (this.gameOver) return;
 
         // Movement
-        if (this.cursors.up.isDown) {
-            this.player.setVelocityY(-this.playerSpeed);
-        } else if (this.cursors.down.isDown) {
-            this.player.setVelocityY(this.playerSpeed);
-        } else {
-            this.player.setVelocityY(0);
-        }
+        let vx = 0, vy = 0;
+        if (this.cursors.left.isDown) vx = -this.playerSpeed;
+        if (this.cursors.right.isDown) vx = this.playerSpeed;
+        if (this.cursors.up.isDown) vy = -this.playerSpeed;
+        if (this.cursors.down.isDown) vy = this.playerSpeed;
+        this.player.setVelocity(vx, vy);
 
-        // Difficulty increases over time
+        // Increase difficulty over time
         this.difficultyTimer += delta;
         if (this.difficultyTimer > 5000) {
             this.difficultyTimer = 0;
             this.increaseDifficulty();
         }
 
-        // Remove offscreen cannonballs
-        this.bullets.getChildren().forEach(bullet => {
-            if (bullet.x > 850 || bullet.x < -50) bullet.destroy();
+        // Clean up bullets
+        this.bullets.getChildren().forEach(b => {
+            if (b.x < -50 || b.x > 850 || b.y < -50 || b.y > 650) {
+                b.destroy();
+            }
         });
     }
 
-    spawnBullet() {
-        const y = Phaser.Math.Between(0, 720);
-        const cannonball = this.bullets.create(0, y, "cannonballs")
-            .setOrigin(0.5)
-            .setScale(1.5)
-            .setVelocityX(this.bulletSpeed);
-        cannonball.body.allowGravity = false;
+    spawnFromAllSides() {
+        if (this.phase >= 0) this.spawnFromLeft();
+        if (this.phase >= 1) this.spawnFromBottom();
+        if (this.phase >= 2) this.spawnFromRight();
+        if (this.phase >= 3) this.spawnFromTop();
+    }
+
+    spawnFromLeft() {
+        const y = Phaser.Math.Between(0, 600);
+        const bullet = this.bullets.create(0, y, "cannonballs").setScale(1.5).setVelocityX(this.bulletSpeed);
+        bullet.body.allowGravity = false;
+    }
+
+    spawnFromRight() {
+        const y = Phaser.Math.Between(0, 600);
+        const bullet = this.bullets.create(800, y, "cannonballs").setScale(1.5).setVelocityX(-this.bulletSpeed);
+        bullet.body.allowGravity = false;
+    }
+
+    spawnFromBottom() {
+        const x = Phaser.Math.Between(0, 800);
+        const bullet = this.bullets.create(x, 650, "cannonballs").setScale(1.5).setVelocityY(-this.bulletSpeed);
+        bullet.body.allowGravity = false;
+    }
+
+    spawnFromTop() {
+        const x = Phaser.Math.Between(0, 800);
+        const bullet = this.bullets.create(x, 0, "cannonballs").setScale(1.5).setVelocityY(this.bulletSpeed);
+        bullet.body.allowGravity = false;
     }
 
     increaseDifficulty() {
         this.bulletSpeed += 20;
-        if (this.spawnInterval > 400) {
-            this.spawnInterval -= 100;
+
+        if (this.phase < this.maxPhase) {
+            this.phase++;
+        }
+
+        if (this.spawnInterval > 500) {
+            this.spawnInterval -= 50;
             this.spawnTimer.reset({
                 delay: this.spawnInterval,
-                callback: this.spawnBullet,
+                callback: this.spawnFromAllSides,
                 callbackScope: this,
                 loop: true
             });
@@ -87,7 +124,7 @@ class MonochromeShooter extends Phaser.Scene {
         this.gameOver = true;
         this.physics.pause();
         player.setTint(0xff0000);
-        this.add.text(280, 260, "You were hit!", { fontSize: "32px", fill: "#fff", fontFamily: "monospace" });
+        this.add.text(280, 260, "Sunk!", { fontSize: "32px", fill: "#fff", fontFamily: "monospace" });
 
         this.time.delayedCall(1500, () => {
             this.scene.start("MonochromeCityScene");

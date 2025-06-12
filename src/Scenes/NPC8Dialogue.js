@@ -10,14 +10,14 @@ class NPC8Dialogue extends Phaser.Scene {
             wordWrap: { width: 300 }
         });
 
-        const text2 = this.add.text(100, 500, "Press SPACE to start the game.", {
+        const text2 = this.add.text(100, 500, "Press SPACE to start the game. Use ARROW KEYS to dodge Cannonballs.", {
             fontSize: "16px",
             fill: "#ffffff",
             wordWrap: { width: 300 }
         });
 
         this.input.keyboard.once("keydown-SPACE", () => {
-            this.scene.start("MonochromeShooter");
+            this.scene.start("MonochromeShooterScene");
         });
     }
 }

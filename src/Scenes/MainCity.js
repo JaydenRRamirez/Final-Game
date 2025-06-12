@@ -15,6 +15,13 @@ class MainCity extends Phaser.Scene {
     }
 
     create() {
+        // Music
+        if (bgm) {
+            bgm.stop();
+        }
+        
+        bgm = this.sound.add("Main City Theme", { loop: true, volume: 0.5 });
+        bgm.play();
         // Tilemap
         this.map = this.add.tilemap("Main City", this.TILESIZE, this.TILESIZE, this.TILEHEIGHT, this.TILEWIDTH);
         this.load.scenePlugin('AnimatedTiles', './lib/AnimatedTiles.js', 'animatedTiles', 'animatedTiles');
@@ -51,8 +58,9 @@ class MainCity extends Phaser.Scene {
 
         this.animatedTiles.init(this.map);
 
-        // Visual debug for collidable tiles
-        this.highlightCollidableTiles([this.groundLayer, this.treesLayer, this.housesLayer]);
+        this.createNPC("npc10", {x: 4, y: 7}, [{x: 4, y: 7}, {x: 2, y: 15}]);
+        this.createNPC("npc11", {x: 27, y: 25}, [{x: 27, y: 25}, {x: 26, y: 25}]);
+
         if (!this.lowCost) {
             this.setCost([this.tileset1, this.tileset2]);
             this.lowCost = true;
@@ -71,7 +79,18 @@ class MainCity extends Phaser.Scene {
     }
 
     update() {
+        // Check overlap for dialogue.
+        if (!this.hasStartedMinigame && this.npc10 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc10.getBounds(), this.activeCharacter.getBounds())) {
+            this.hasStartedMinigame = true;
+            this.scene.start("NPC10Dialogue");
+        }
 
+        if (!this.dialogueStarted && this.npc11 &&
+            Phaser.Geom.Intersects.RectangleToRectangle(this.npc11.getBounds(), this.activeCharacter.getBounds())) {
+            this.dialogue = true;
+            this.scene.start("NPC11Dialogue");
+        }
     }
 
     tileXtoWorld(tileX) {
@@ -155,6 +174,12 @@ class MainCity extends Phaser.Scene {
                 this.scene.start("RealCityScene"); 
                 break;
             }
+
+            if (tile && tile.properties && tile.properties.end) {
+                console.log(`Entered 'collidecity' tile at (${tileX}, ${tileY})`);
+                this.scene.start("EndScene"); 
+                break;
+            }
         }
     }
 
@@ -181,20 +206,55 @@ class MainCity extends Phaser.Scene {
         }
     }
 
-    highlightCollidableTiles(layers) {
-        layers.forEach(layer => {
-            layer.forEachTile(tile => {
-                if (tile && tile.properties && tile.properties.collides) {
-                    const marker = this.add.rectangle(
-                        tile.pixelX + tile.width / 2,
-                        tile.pixelY + tile.height / 2,
-                        tile.width,
-                        tile.height,
-                        0xff0000,
-                        0.3
-                    ).setDepth(1000);
+    createNPC(key, startTile, pathTiles) {
+        const npc = this.add.sprite(
+            this.tileXtoWorld(startTile.x),
+            this.tileYtoWorld(startTile.y),
+            key
+        ).setOrigin(0, 0);
+
+        // Track npcs for overlap check
+        if (key === "npc10") {
+            this.npc10 = npc;
+        }
+
+        if (key === "npc11") {
+            this.npc11 = npc;
+        }
+
+        const walkPath = [...pathTiles, ...pathTiles.slice().reverse().slice(1, -1)];
+
+        let currentStep = 0;
+
+        const moveToNext = () => {
+            const from = walkPath[currentStep];
+            const to = walkPath[(currentStep + 1) % walkPath.length];
+
+            this.finder.findPath(from.x, from.y, to.x, to.y, path => {
+                if (path && path.length > 0) {
+                    let tweens = path.slice(1).map(p => ({
+                        x: this.tileXtoWorld(p.x),
+                        y: this.tileYtoWorld(p.y),
+                        duration: 300
+                    }));
+
+                    this.tweens.chain({
+                        targets: npc,
+                        tweens: tweens,
+                        onComplete: () => {
+                            currentStep = (currentStep + 1) % walkPath.length;
+                            moveToNext();
+                        }
+                    });
+                } else {
+                    console.warn(`NPC '${key}' could not pathfind from (${from.x},${from.y}) to (${to.x},${to.y})`);
                 }
             });
-        });
+
+            this.finder.calculate();
+        };
+
+        moveToNext();
     }
+
 }
